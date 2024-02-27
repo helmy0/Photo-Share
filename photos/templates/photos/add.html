@@ -12,11 +12,11 @@
         <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="photo" class="form-label">Photo</label>
-                <input type="file" class="form-control" id="img" name="img">
+                <label for="photo" class="form-label">Photo <span class="text-danger">*</span></label>
+                <input accept="image/*" required type="file" class="form-control" id="img" name="img">
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+                <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
                 <input placeholder=" e.g. Havana trip 2023" type="text" class="form-control" id="description" name="description">
             </div>
             <div class="mb-3">
@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label>Create new category</label>
-                <input placeholder="New category" type="text" class="form-control" id="description" name="new-category">
+                <input value="" placeholder="New category" type="text" class="form-control" id="new-category" name="new-category">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
