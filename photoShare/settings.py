@@ -12,6 +12,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+import importlib.util
+import os
+
+from dotenv import *
+load_dotenv()
+dotenv_path = find_dotenv('.env')
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +40,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "photos",
-
+    "storages",
 
     "django.contrib.admin",
     "django.contrib.auth",
@@ -119,12 +127,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = 'staticfiles'
 MEDIA_URL = "imgs/"
 STATICFILES = [
     BASE_DIR / 'static'
 ]
 MEDIA_ROOT = BASE_DIR / 'static/imgs'
 
+
+
+# S3 SETTINGS
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3.S3Storage"
+
+AWS_QUERYSTRING_AUTH = False
+
+
+AWS_S3_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+
+AWS_STORAGE_BUCKET_NAME = "photo-share-django"
 
 
 # Default primary key field type

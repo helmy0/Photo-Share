@@ -48,3 +48,14 @@ def addPhoto(request):
     }
 
     return render(request, "photos/add.html", context)
+
+
+def deletePhoto(request, pk):
+    photo = Photo.objects.get(id=pk)
+    if request.method == 'POST':
+        photo.delete()
+        return redirect('/')
+    context = {
+        'photo': photo,
+    }
+    return render(request, "photos/delete.html", context)

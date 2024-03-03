@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h3>Are you sure you want to delete the photo?</h3>
+<form action="{% url 'delete' photo.id %}" method ="POST">
+    {% csrf_token %}
+    <a href=" {% url 'gallery' %} ">Cancel</a>
+    <input type = "submit" name="Confirm">
+</form>
+</body>
+</html>
