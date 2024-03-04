@@ -1,6 +1,6 @@
 # PhotoShare
 
-Welcome to PhotoShare! PhotoShare is a Django-based web application that allows users to manage photos by adding, deleting, viewing, and organizing them into categories. The application stores photos on AWS for efficient management and accessibility.
+Welcome to PhotoShare! PhotoShare is a containarized Django-based web application that allows users to manage photos by adding, deleting, viewing, and organizing them into categories. The application stores photos on AWS for efficient management and accessibility.
 
 ## Features
 
