@@ -44,4 +44,3 @@ docker run -p 8000:8000 photoshare
 
 5. Access the application in your web browser at `http://localhost:8000`.
 
-Thank you for considering PhotoShare! 📷
